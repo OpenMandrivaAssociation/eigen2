@@ -1,6 +1,6 @@
 %define unstable 1
 
-Name: eigen
+Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
 Version: 2.0
 Release: %mkrel 0.beta1.1
@@ -25,7 +25,7 @@ linear algebra.
 #---------------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{name}2
+%setup -q -n %{name}
 
 %build
 %cmake
