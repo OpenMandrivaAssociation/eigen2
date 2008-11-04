@@ -1,15 +1,15 @@
 %define unstable 1
-
+%define svn 879783
 Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
 Version: 2.0
-Release: %mkrel 0.beta1.1
+Release: %mkrel 0.beta1.2
 Epoch: 1
 Group: System/Libraries
 License: LGPL
 URL: http://eigen.tuxfamily.org/
 # Tarball from kdesupport
-Source: eigen-%{version}-beta1.tar.bz2
+Source: eigen-%{version}-beta1.%svn.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.4.6
 
