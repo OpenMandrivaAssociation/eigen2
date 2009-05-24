@@ -1,6 +1,6 @@
 Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
-Version: 2.0.0
+Version: 2.0.52
 Release: %mkrel 1
 Epoch: 1
 Group: System/Libraries
@@ -15,6 +15,7 @@ BuildRequires: graphviz
 BuildRequires: tetex-dvips
 BuildRequires: tetex-latex
 BuildRequires: blas-devel
+BuildRequires: lapack-devel
 BuildRequires: gsl-devel
 BuildRequires: qt4-devel
 BuildArch: noarch
@@ -25,7 +26,7 @@ Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
 %prep
-%setup -q -n eigen-%version
+%setup -q -n %name
 
 %build
 export CXXFLAGS="$CXXFLAGS -fpermissive"
@@ -40,9 +41,9 @@ export CPPFLAGS="$CPPFLAGS -fpermissive"
  doxygen
 )
 
-(cd ../latex
- make refman.pdf
-)
+#(cd ../latex
+# make refman.pdf
+#)
 
 %install
 rm -rf %{buildroot}
