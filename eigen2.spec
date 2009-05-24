@@ -7,6 +7,7 @@ Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
 Source: http://download.tuxfamily.org/eigen/eigen-%{version}.tar.bz2
+Patch0: eigen-2.0.52-fix-build.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
@@ -27,13 +28,15 @@ math, a.k.a. linear algebra.
 
 %prep
 %setup -q -n %name
-
+%patch0 -p0
 %build
 export CXXFLAGS="$CXXFLAGS -fpermissive"
 export CFLAGS="$CFLAGS -fpermissive"
 export CPPFLAGS="$CPPFLAGS -fpermissive"
 
-%cmake -DEIGEN_BUILD_TESTS=ON
+%cmake 
+# TODO use back tests on -2mdv2010.0 rpm
+#-DEIGEN_BUILD_TESTS=ON
 %make
 
 # this should be fixed later in cmake doc
@@ -49,17 +52,19 @@ export CPPFLAGS="$CPPFLAGS -fpermissive"
 rm -rf %{buildroot}
 %makeinstall_std -C build
 
-%check
-cd build/test
-ctest
-cd -
+#%check
+#cd build/test
+#ctest
+#cd -
 
 %clean 
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc COPYING COPYING.LESSER html/ latex/refman.pdf
+%doc COPYING COPYING.LESSER html/ 
+#latex/refman.pdf
 %dir %{_includedir}/eigen2/
 %{_includedir}/eigen2/*
+%{_libdir}/pkgconfig/eigen2.pc
 
