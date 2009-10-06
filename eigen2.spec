@@ -1,7 +1,7 @@
 Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
 Version: 2.0.6
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 2
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
@@ -21,6 +21,7 @@ BuildRequires: gsl-devel
 BuildRequires: qt4-devel
 BuildArch: noarch
 Obsoletes: eigen
+Obsoletes: %{_lib}eigen1-devel
 
 %description 
 Eigen is a lightweight C++ template library for vector and matrix
