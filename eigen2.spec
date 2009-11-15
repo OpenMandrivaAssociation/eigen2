@@ -7,6 +7,7 @@ Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
 Source: http://bitbucket.org/eigen/%{name}/get/%{version}.tar.bz2
+Patch0: eigen-2.0.9-noarch-pkgconfig.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
@@ -28,6 +29,7 @@ math, a.k.a. linear algebra.
 
 %prep
 %setup -q -n %name
+%patch0 -p0
 
 %build
 export CXXFLAGS="$CXXFLAGS -fpermissive"
@@ -65,3 +67,4 @@ rm -rf %{buildroot}
 #latex/refman.pdf
 %dir %{_includedir}/eigen2/
 %{_includedir}/eigen2/*
+%{_datadir}/pkgconfig/*.pc
