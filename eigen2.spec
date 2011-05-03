@@ -1,7 +1,7 @@
 Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
 Version: 2.0.15
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 2
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
