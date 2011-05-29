@@ -1,13 +1,12 @@
 Name: eigen2
 Summary: Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra
-Version: 2.0.15
-Release: %mkrel 2
+Version: 2.0.16
+Release: %mkrel 1
 Epoch: 2
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
-Source: http://bitbucket.org/eigen/%{name}/get/%{version}.tar.bz2
-#Patch0: eigen-2.0.9-noarch-pkgconfig.patch
+Source: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
@@ -28,16 +27,10 @@ Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
 %prep
-%setup -q -n eigen
-#%patch0 -p0
+%setup -qn eigen-eigen-9ca09dbd70ce
 
 %build
-export CXXFLAGS="$CXXFLAGS -fpermissive"
-export CFLAGS="$CFLAGS -fpermissive"
-export CPPFLAGS="$CPPFLAGS -fpermissive"
-
 %cmake 
-#-DEIGEN_BUILD_TESTS=ON
 %make
 
 # this should be fixed later in cmake doc
