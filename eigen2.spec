@@ -2,7 +2,7 @@ Summary:	Lightweight C++ template library for vector and matrix math (linear alg
 Name:		eigen2
 Epoch:		2
 Version:	2.0.17
-Release:	10
+Release:	11
 Group:		System/Libraries
 License:	LGPLv3+ or GPLv2+
 Url:		http://eigen.tuxfamily.org/
