@@ -5,7 +5,7 @@ Version:	2.0.17
 Release:	12
 Group:		System/Libraries
 License:	LGPLv3+ or GPLv2+
-Url:		http://eigen.tuxfamily.org/
+Url:		https://eigen.tuxfamily.org/
 Source0:	http://bitbucket.org/eigen/eigen/get/%{name}-%{version}.tar.bz2
 Source1:	eigen2.rpmlintrc
 BuildArch:	noarch
